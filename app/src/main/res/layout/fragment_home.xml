@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ui.fragment.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            android:elevation="0dp"
+            >
+
+            <include
+                layout="@layout/view_profile"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search"
+                android:drawableStart="@drawable/ic_search_light"
+                android:drawablePadding="10dp"
+                android:textSize="14sp"
+                android:textColorHint="#212121"
+                android:textColor="@color/black"
+                android:textFontWeight="100"
+                android:fontFamily="@font/quicksand_font_family"
+                android:background="@drawable/bg_search"
+                android:padding="9dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginStart="28dp"
+                android:enabled="false"
+                />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorFullWidth="false"
+            app:tabMaxWidth="210dp"
+            app:tabGravity="center"
+            app:tabTextColor="@color/black"
+            app:tabTextAppearance="@style/tabAppearanceCustom"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

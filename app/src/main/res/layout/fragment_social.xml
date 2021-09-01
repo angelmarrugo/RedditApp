@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.SocialFragment"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="45dp"
+                android:paddingVertical="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_rounded_premium"
+                    android:src="@drawable/premium_lounge"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv1"
+                    app:layout_constraintBottom_toBottomOf="@id/iv1"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev_name"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/quicksand_font_family"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev_description"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/quicksand_font_family"
+                        android:textFontWeight="100"
+                        android:textColor="@color/black"
+                        />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="45dp"
+                android:paddingVertical="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_rounded_premium"
+                    android:src="@drawable/premium_awards"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv2"
+                    app:layout_constraintBottom_toBottomOf="@id/iv2"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_me"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/quicksand_font_family"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev_social"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/quicksand_font_family"
+                        android:textFontWeight="100"
+                        android:textColor="@color/black"
+                        />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="45dp"
+                android:paddingVertical="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv3"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_rounded_premium"
+                    android:src="@drawable/premium_bonus"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv3"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/contact"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/quicksand_font_family"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev_contact"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/quicksand_font_family"
+                        android:textFontWeight="100"
+                        android:textColor="@color/black"
+                        />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_linkedid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LinkendIn"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/quicksand_font_family"
+                android:textAllCaps="false"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</FrameLayout>

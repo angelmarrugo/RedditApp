@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">RedditApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="popular">Popular</string>
+    <string name="search">Search</string>
+    <string name="retry">Retry</string>
+    <string name="without_results">Without results</string>
+    <string name="let_s_try_that_again">Let`s try that again</string>
+    <string name="message_error">We had some trouble loading the data. Please try again</string>
+    <string name="links">Links</string>
+    <string name="dev_name">Angel Miguel Marrugo Plata</string>
+    <string name="dev_description">Desarrollador Android apasinado por la tecnología y la innovación</string>
+    <string name="about_me">Conoce más de mí</string>
+    <string name="dev_social">LinkedIn: in/angelmarrugo\nGithub: /angelmarrugo\nStackOverflow: /episodioshd-angel</string>
+    <string name="contact">Contacto</string>
+    <string name="dev_contact">email: angelmarrugoplata@gmail.com\nTeléfono: +57 301 4100407</string>
+    <string name="log_error">We had some trouble getting to Reddit.</string>
+    <string name="text_top_post">TOP POST PAST 24 HOURS</string>
+    <string name="share">Share</string>
+    <string name="award">Award</string>
+</resources>
