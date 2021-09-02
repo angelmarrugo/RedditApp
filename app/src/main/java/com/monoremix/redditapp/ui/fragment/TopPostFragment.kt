@@ -18,6 +18,7 @@ import com.monoremix.myredditapp.viewmodel.TopPostViewModel
 import com.monoremix.redditapp.R
 import com.monoremix.redditapp.databinding.FragmentTopPostBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kohii.v1.exoplayer.Kohii
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -30,7 +31,7 @@ class TopPostFragment : Fragment() {
 
     private lateinit var binding: FragmentTopPostBinding
     private val topPostViewModel: TopPostViewModel by viewModels()
-    private val postsAdapter: PostsAdapter by lazy { PostsAdapter() }
+    private lateinit var postsAdapter: PostsAdapter
 
     private var postsJob: Job? = null
 
@@ -66,6 +67,9 @@ class TopPostFragment : Fragment() {
     }
 
     private fun FragmentTopPostBinding.initAdapter() {
+        val kohii = Kohii[this@TopPostFragment]
+        kohii.register(this@TopPostFragment).addBucket(lvPosts)
+        postsAdapter = PostsAdapter(kohii)
         lvPosts.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = postsAdapter.withLoadStateHeaderAndFooter(

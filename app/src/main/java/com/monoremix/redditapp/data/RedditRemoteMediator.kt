@@ -5,9 +5,9 @@ import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
+import com.monoremix.myredditapp.model.Post
 import com.monoremix.redditapp.api.RedditService
 import com.monoremix.redditapp.db.RedditDatabase
-import com.monoremix.redditapp.model.Post
 import com.monoremix.redditapp.model.RemoteKeys
 import retrofit2.HttpException
 import java.io.IOException

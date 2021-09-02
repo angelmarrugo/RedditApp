@@ -5,9 +5,9 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.monoremix.myredditapp.model.Post
 import com.monoremix.redditapp.api.RedditService
 import com.monoremix.redditapp.db.RedditDatabase
-import com.monoremix.redditapp.model.Post
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

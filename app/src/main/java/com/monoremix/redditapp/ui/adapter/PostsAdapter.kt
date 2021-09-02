@@ -12,20 +12,21 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.clear
 import coil.load
+import com.monoremix.myredditapp.model.Post
 import com.monoremix.redditapp.R
 import com.monoremix.redditapp.databinding.ItemPostBinding
 import com.monoremix.redditapp.model.Children
-import com.monoremix.redditapp.model.Post
+import kohii.v1.exoplayer.Kohii
 import kotlin.math.ln
 import kotlin.math.pow
 
 
-class PostsAdapter: PagingDataAdapter<Post, PostsAdapter.PostViewHolder>(POST_COMPARATOR) {
+class PostsAdapter(private val kohii: Kohii): PagingDataAdapter<Post, PostsAdapter.PostViewHolder>(POST_COMPARATOR) {
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val item = getItem(position)
         if (item != null) {
-            holder.bind(item)
+            holder.bind(item, kohii)
         }
     }
 
@@ -60,19 +61,19 @@ class PostsAdapter: PagingDataAdapter<Post, PostsAdapter.PostViewHolder>(POST_CO
 
         }
 
-        fun bind(post: Post?) {
+        fun bind(post: Post?, kohii: Kohii) {
             if (post == null) {
                 TODO()
             } else {
-                showPostData(post)
+                showPostData(post, kohii)
             }
         }
 
         @SuppressLint("SetTextI18n")
-        private fun showPostData(post: Post) = with(binding) {
+        private fun showPostData(post: Post, kohii: Kohii) = with(binding) {
 
             val ago = DateUtils.getRelativeTimeSpanString(
-                post.created!!*1000,
+                post.created?.toLong()!!*1000,
                 System.currentTimeMillis(),
                 DateUtils.MINUTE_IN_MILLIS)
 
@@ -84,22 +85,38 @@ class PostsAdapter: PagingDataAdapter<Post, PostsAdapter.PostViewHolder>(POST_CO
             btnComments.text = withSuffix(post.num_comments!!.toLong())
             when(post.post_hint) {
                 "image" -> {
+                    playerView.visibility = View.GONE
+                    ivPost.visibility = View.VISIBLE
                     ivPost.load(post.url_overridden_by_dest) {
                         crossfade(true)
                         crossfade(1000)
                     }
                 }
-                "hosted:video", "link" -> {
+                "hosted:video" -> {
+                    ivPost.visibility = View.VISIBLE
+                    ivPost.load(post.thumbnail) {
+                        crossfade(true)
+                        crossfade(50)
+                    }
+                    post.media?.reddit_video?.fallback_url?.let {
+                        kohii.setUp(it) {
+                            ivPost.visibility = View.GONE
+                            playerView.visibility = View.VISIBLE
+                        }.bind(playerView)
+                    }
+                }
+                "link" -> {
+                    playerView.visibility = View.GONE
+                    ivPost.visibility = View.VISIBLE
                     ivPost.load(post.thumbnail) {
                         crossfade(true)
                         crossfade(1000)
                     }
                 }
-                "self" -> {
-                    contentMedia.visibility = View.GONE
-                }
                 else ->{
                     ivPost.clear()
+                    playerView.visibility = View.GONE
+                    ivPost.visibility = View.GONE
                 }
             }
         }

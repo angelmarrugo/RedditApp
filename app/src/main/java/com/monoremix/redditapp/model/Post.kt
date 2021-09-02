@@ -1,10 +1,15 @@
-package com.monoremix.redditapp.model
+package com.monoremix.myredditapp.model
 
+import androidx.room.Embedded
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "posts")
+@Entity(tableName = "posts",
+    indices = [
+        Index("media_video_fallback_url")
+    ])
 data class Post(
     //val all_awardings: List<AllAwarding>,
     val allow_live_comments: Boolean,
@@ -17,7 +22,7 @@ data class Post(
     val can_mod_post: Boolean?,
     val clicked: Boolean?,
     val contest_mode: Boolean?,
-    val created: Long?,
+    val created: Double?,
     val created_utc: Double?,
     val domain: String?,
     val downs: Int?,
@@ -39,7 +44,8 @@ data class Post(
     val link_flair_text_color: String?,
     val link_flair_type: String?,
     val locked: Boolean?,
-    //val media: Media,
+    @field:Embedded(prefix = "media_")
+    val media: Media?,
     val media_only: Boolean?,
     val name: String?,
     val no_follow: Boolean?,
@@ -76,4 +82,22 @@ data class Post(
     val visited: Boolean?,
     val whitelist_status: String?,
     val wls: Int?
-)
+){
+    data class Media(
+        @field:Embedded(prefix = "video_")
+        val reddit_video: RedditVideo?
+    ) {
+        data class RedditVideo(
+            val bitrate_kbps: Int,
+            val dash_url: String,
+            val duration: Int,
+            val fallback_url: String,
+            val height: Int,
+            val hls_url: String,
+            val is_gif: Boolean,
+            val scrubber_media_url: String,
+            val transcoding_status: String,
+            val width: Int
+        )
+    }
+}

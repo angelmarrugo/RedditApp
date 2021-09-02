@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.monoremix.redditapp.model.Post
+import com.monoremix.myredditapp.model.Post
 import com.monoremix.redditapp.model.RemoteKeys
 
 @Database(
     entities = [Post::class, RemoteKeys::class],
-    version = 7,
+    version = 9,
     exportSchema = false
 )
 abstract class RedditDatabase: RoomDatabase() {

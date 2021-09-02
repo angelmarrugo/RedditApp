@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.monoremix.redditapp.model.Post
+import com.monoremix.myredditapp.model.Post
 
 @Dao
 interface PostDao {

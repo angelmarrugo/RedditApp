@@ -1,5 +1,6 @@
 package com.monoremix.redditapp.model
 
+import com.monoremix.myredditapp.model.Post
 import java.lang.Exception
 
 sealed class TopPostResult {
