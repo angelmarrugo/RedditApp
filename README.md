@@ -29,8 +29,6 @@ Por complicaciones de tiempo personal no hice plus que me hubiera gustado agrega
 <img src='https://user-images.githubusercontent.com/29846058/131725937-4b630dff-0a8c-4014-8771-d7db96dfce00.jpeg' width='40%'>  
 <img  src='https://user-images.githubusercontent.com/29846058/131726016-eef062b6-e95a-4fe7-a7fb-7f9617073f19.jpeg' width='40%'> 
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://drive.google.com/file/d/1XbPF81rS4Dwhd6_j37iVwgAJ9EwgbQuH/view)
-
 
 
 ## More
